@@ -8,6 +8,9 @@
     <name>gameoflife</name>
     <url>https://github.com/wakaleo/game-of-life</url>
     <properties>
+        <sap.cloud.sdk.path>${project.build.directory}/sdk</sap.cloud.sdk.path>
+        <sap.cloud.sdk.version>3.58.10.1</sap.cloud.sdk.version>
+        <sap.cloud.sdk.plugin>neo-java-web-maven-plugin</sap.cloud.sdk.plugin>
         <build.number>SNAPSHOT</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <easyb.version>1.4</easyb.version>
@@ -179,6 +182,13 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+            <groupId>com.sap.cloud</groupId>
+            <artifactId>neo-java-web-api</artifactId>
+            <version>${sap.cloud.sdk.version}</version>
+            <scope>provided</scope>
+        </dependency>
+            
+            <dependency>
                 <groupId>org.easyb</groupId>
                 <artifactId>easyb-core</artifactId>
                 <version>${easyb.version}</version>
@@ -224,6 +234,11 @@
             <id>metrics</id>
             <build>
                 <plugins>
+                    <plugin>
+                    <groupId>com.sap.cloud</groupId>
+                    <artifactId>${sap.cloud.sdk.plugin}</artifactId>
+                    <version>${sap.cloud.sdk.version}</version>
+                </plugin>
                     <!-- CHECKSTYLE -->
                     <!--<plugin>-->
                         <!--<artifactId>maven-checkstyle-plugin</artifactId>-->
@@ -282,6 +297,10 @@
                         <version>1.0</version>
                         <executions>
                             <execution>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>install-sdk</goal>
+                                </goals>
                                 <id>enforce-versions</id>
                                 <goals>
                                     <goal>enforce</goal>
