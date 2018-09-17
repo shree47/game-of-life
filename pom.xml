@@ -299,10 +299,8 @@
                             <execution>
                                 <id>enforce-versions</id>
                                 <phase>initialize</phase>
-                                <goals>
-                                    <goal>install-sdk</goal>
-                                </goals>
                                 
+                           
                                 <goals>
                                     <goal>enforce</goal>
                                 </goals>
@@ -314,6 +312,13 @@
                                     </rules>
                                 </configuration>
                             </execution>
+                            <execution>
+                                <id>cloud-install-sdk</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>install-sdk</goal>
+                                </goals>
+                                </execution>
                         </executions>
                     </plugin>
                     <plugin>
