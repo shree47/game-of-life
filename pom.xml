@@ -297,11 +297,12 @@
                         <version>1.0</version>
                         <executions>
                             <execution>
+                                <id>enforce-versions</id>
                                 <phase>initialize</phase>
                                 <goals>
                                     <goal>install-sdk</goal>
                                 </goals>
-                                <id>enforce-versions</id>
+                                
                                 <goals>
                                     <goal>enforce</goal>
                                 </goals>
