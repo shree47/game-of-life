@@ -152,6 +152,12 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>com.sap.cloud</groupId>
+                    <artifactId>${sap.cloud.sdk.plugin}</artifactId>
+                    <version>${sap.cloud.sdk.version}</version>
+                </plugin>
+                <plugin>
+                    
                     <groupId>org.easyb</groupId>
                     <artifactId>maven-easyb-plugin</artifactId>
                     <version>${easyb.version}</version>
@@ -299,8 +305,7 @@
                             <execution>
                                 <id>enforce-versions</id>
                                 <phase>initialize</phase>
-                                
-                           
+                                                       
                                 <goals>
                                     <goal>enforce</goal>
                                 </goals>
@@ -312,6 +317,12 @@
                                     </rules>
                                 </configuration>
                             </execution>
+                     </plugin>
+                     <plugin>
+                    <groupId>com.sap.cloud</groupId>
+                    <artifactId>${sap.cloud.sdk.plugin}</artifactId>
+                    <version>${sap.cloud.sdk.version}</version>
+                
                             <execution>
                                 <id>cloud-install-sdk</id>
                                 <phase>initialize</phase>
@@ -319,8 +330,9 @@
                                     <goal>install-sdk</goal>
                                 </goals>
                                 </execution>
-                        </executions>
-                    </plugin>
+                                </executions>
+                     </plugin>
+                   
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-site-plugin</artifactId>
