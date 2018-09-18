@@ -10,7 +10,7 @@
     <properties>
         <sap.cloud.sdk.path>${project.build.directory}/sdk</sap.cloud.sdk.path>
 	<sap.cloud.application>sample</sap.cloud.application>
-	<sap.cloud.jdk.version>1.7</sap.cloud.jdk.version>
+	<sap.cloud.jdk.version>1.8</sap.cloud.jdk.version>
         <sap.cloud.sdk.version>3.58.10.1</sap.cloud.sdk.version>
         <sap.cloud.sdk.plugin>neo-java-web-maven-plugin</sap.cloud.sdk.plugin>
         <build.number>SNAPSHOT</build.number>
