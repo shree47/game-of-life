@@ -476,16 +476,7 @@
 						<groupId>com.sap.cloud</groupId>
 						<artifactId>${sap.cloud.sdk.plugin}</artifactId>
 						<version>${sap.cloud.sdk.version}</version>
-						<executions>
-							<execution>
-								<id>cloud-install-sdk</id>
-                                <phase>initialize</phase>
-                                <goals>
-                                    <goal>install-sdk</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
+						<configuration>
                             <skip>${skipIntegrationTests}</skip>
                             <sdkInstallPath>${sap.cloud.sdk.path}</sdkInstallPath>
                             <host>${sap.cloud.host}</host>
