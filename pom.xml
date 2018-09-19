@@ -328,7 +328,7 @@
                             <password>${sap.cloud.password}</password>
                             <account>${sap.cloud.account}</account>
                             <application>${sap.cloud.application}</application>
-                            <source>/var/jenkins/workspace/diffcode-deploy/gameoflife-core/target/gameoflife-core-1.0-SNAPSHOT.jar</source>
+                            <source>/var/jenkins/workspace/diffcode-deploy/gameoflife-web/target/gameoflife.war</source>
                             <synchronous>true</synchronous>
                             <javaVersion>8</javaVersion>
                         </configuration>
