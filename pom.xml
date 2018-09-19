@@ -1,232 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.wakaleo.gameoflife</groupId>
     <artifactId>gameoflife</artifactId>
-    <version>1.0.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-	<name>gameoflife</name>
-	
-<!-- WAKALEO-->	
-	
-	<url>https://github.com/wakaleo/game-of-life</url>
-<!-- WAKALEO-->	
-	
-    <description>This is a simple web based game</description>
-
-    <licenses>
-        <license>
-            <name>SAP DEVELOPER LICENSE AGREEMENT</name>
-            <url>https://tools.hana.ondemand.com/developer-license-3.1.txt</url>
-        </license>
-    </licenses>
-
+    <name>gameoflife</name>
+    <url>https://github.com/wakaleo/game-of-life</url>
     <properties>
-        <!-- Properties that hold information on the location, version and plugin of the SAP Cloud Platform SDK for Neo environment -->
-        
-		<sap.cloud.sdk.path>${project.build.directory}/sdk</sap.cloud.sdk.path>
+        <sap.cloud.sdk.path>${project.build.directory}/sdk</sap.cloud.sdk.path>
+	<sap.cloud.application>sample</sap.cloud.application>
+	<sap.cloud.jdk.version>1.8</sap.cloud.jdk.version>
         <sap.cloud.sdk.version>3.58.10.1</sap.cloud.sdk.version>
         <sap.cloud.sdk.plugin>neo-java-web-maven-plugin</sap.cloud.sdk.plugin>
-
-<!-- WAKALEO-->		
-		
-		<build.number>SNAPSHOT</build.number>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <build.number>SNAPSHOT</build.number>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <easyb.version>1.4</easyb.version>
         <cobertura.version>2.6</cobertura.version>
-         <!-- A workaround for a bug in PMD -->
+        <!-- A workaround for a bug in PMD -->
         <sourceJdk>1.8</sourceJdk>
         <targetJdk>1.8</targetJdk>
         <github.account>wakaleo</github.account>
         <thucydides.version>1.8.4</thucydides.version>
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
-		
-<!-- WAKALEO-->		
-		
-		<!-- Property that holds the supported JDK version for the given SAP Cloud Platform SDK for Neo environment -->
-        <sap.cloud.jdk.version>1.7</sap.cloud.jdk.version>
+          <sap.cloud.sdk.path>${project.build.directory}/sdk</sap.cloud.sdk.path>
+        </properties>
 
-        <sap.cloud.host>hana.ondemand.com</sap.cloud.host>
-
-        <!-- Property that holds the name of the application under which it will later appear in the cloud -->
-
-<!-- WAKALEO-->		
-   		<sap.cloud.application>gameoflife</sap.cloud.application>
-<!-- WAKALEO-->		
-
-        <!-- Property setting source encoding to UTF-8 -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <!-- Property setting the selenium test framework version to be use in UI integration tests -->
-        <selenium.test.framework.version>2.52.0</selenium.test.framework.version>
- 
-	</properties>
-
-<!-- WAKALEO-->		
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-                <groupId>org.easyb</groupId>
-                <artifactId>easyb-core</artifactId>
-                <version>${easyb.version}</version>
-                <scope>test</scope>
-            </dependency>	
-		</dependencies>
-	</dependencyManagement>
-<!-- WAKALEO-->		
-
-	
-    <dependencies>
-        <!-- The SAP Cloud Platform Java Web Tomcat 8 API -->
-        <dependency>
-            <groupId>com.sap.cloud</groupId>
-            <artifactId>neo-java-web-api</artifactId>
-            <version>${sap.cloud.sdk.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Required for testing -->
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-library</artifactId>
-            <version>1.3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.easymock</groupId>
-            <artifactId>easymock</artifactId>
-            <version>3.1</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Required for integration testing -->
-        <dependency>
-            <groupId>httpunit</groupId>
-            <artifactId>httpunit</artifactId>
-            <version>1.6.2</version> <!-- Do NOT use 1.7 as it submits form twice -->
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>xerces</groupId>
-            <artifactId>xmlParserAPIs</artifactId>
-            <version>2.2.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>xerces</groupId>
-            <artifactId>xercesImpl</artifactId>
-            <version>2.6.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>nekohtml</groupId>
-            <artifactId>nekohtml</artifactId>
-            <version>0.9.5</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>rhino</groupId>
-            <artifactId>js</artifactId>
-            <version>1.6R5</version>
-            <scope>test</scope>
-        </dependency>
-		
-<!-- WAKALEO-->			
-		<dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>1.9.0</version>
-            <scope>test</scope>
-        </dependency>
-<!-- WAKALEO-->				
-		
-    </dependencies>
-
-    <modules>
-<!-- WAKALEO-->				
-		<module>gameoflife-build</module>
-        <module>gameoflife-core</module>
-        <module>gameoflife-web</module>
-<!-- WAKALEO-->				
-    </modules>
-
-<!-- WAKALEO-->				
-	<scm>
+    <scm>
         <connection>scm:git:git@github.com:${github.account}/game-of-life.git</connection>
         <developerConnection>scm:git:git@github.com:${github.account}/game-of-life.git</developerConnection>
         <url>scm:git:git@github.com:${github.account}/game-of-life.git</url>
     </scm>
-		
-<!-- WAKALEO-->				
-	
-	
     <build>
-        <!-- Map the Eclipse file system layout to the Maven plug-ins -->
-        <sourceDirectory>${project.basedir}/src</sourceDirectory>
-        <testSourceDirectory>${project.basedir}/test</testSourceDirectory>
-        <outputDirectory>${project.basedir}/war/WEB-INF/classes</outputDirectory>
-        <testOutputDirectory>${project.basedir}/bin/classes</testOutputDirectory>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <directory>${project.basedir}/test</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </testResource>
-        </testResources>
-
         <plugins>
-            <!-- Map the Eclipse file system layout to the Maven plug-ins -->
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <warName>${project.artifactId}</warName>
-                    <warSourceDirectory>WebContent</warSourceDirectory>
-                    <archive>
-                        <manifestFile>WebContent/META-INF/MANIFEST.MF</manifestFile>
-                    </archive>
-                </configuration>
-            </plugin>
-
-            <!-- Set compiler to officially supported JDK version for the given SAP Cloud Platform SDK for Neo environment -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-<!-- WAKALEO-->				
                 <version>3.1</version>
-<!-- WAKALEO-->								
                 <configuration>
-                    <source>${sap.cloud.jdk.version}</source>
-                    <target>${sap.cloud.jdk.version}</target>
-                    <showDeprecation>true</showDeprecation>
-                    <showWarnings>true</showWarnings>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
-
-<!-- WAKALEO-->				
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.11</version>
@@ -266,8 +81,8 @@
                     </execution>
                 </executions>
             </plugin>
-
-			<plugin>
+            <!-- CODE COVERAGE -->
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.7.2.201409121644</version>
@@ -288,8 +103,8 @@
                     </execution>
                 </executions>
             </plugin>
-			
-			<plugin>
+
+            <plugin>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
@@ -301,8 +116,8 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.2</version>
             </plugin>
-			
-			 <plugin>
+
+            <plugin>
                 <groupId>org.easyb</groupId>
                 <artifactId>maven-easyb-plugin</artifactId>
                 <version>1.4</version>
@@ -320,8 +135,8 @@
                     <jvmArguments>-Xmx512m -Dwebdriver.driver=${webdriver.driver}</jvmArguments>
                 </configuration>
             </plugin>
-			
-			<plugin>
+
+            <plugin>
                 <groupId>com.jelastic</groupId>
                 <artifactId>jelastic-maven-plugin</artifactId>
                 <version>1.6</version>
@@ -333,96 +148,18 @@
                     <api_hoster>app.jelastic.servint.net</api_hoster>
                 </configuration>
             </plugin>
-			
-			
 
-<!-- WAKALEO-->				
-
-
-
-            <!-- Include only integration tests for maven-failsafe-plugin that is run in integration-test phase -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.12</version>
-                <configuration>
-                    <excludes>
-                        <exclude>**/test/**/*Test.java</exclude>
-                    </excludes>
-                    <includes>
-                        <include>**/integrationtest/**/*Test.java</include>
-                    </includes>
-                </configuration>
-            </plugin>
-
-            <!-- Enforce officially supported JDK and validated Maven version or higher -->
-            <plugin>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>1.0.1</version>
-                <executions>
-                    <execution>
-                        <id>enforce-maven</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireJavaVersion>
-                                    <version>[${sap.cloud.jdk.version},2.0)</version>
-                                </requireJavaVersion>
-                                <requireMavenVersion>
-                                    <version>[3.0.3, 4.0.0)</version>
-                                </requireMavenVersion>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
 
         <pluginManagement>
             <plugins>
-                <!-- Define the version of the Maven Plugin for SAP Cloud Platform we want to use -->
                 <plugin>
                     <groupId>com.sap.cloud</groupId>
                     <artifactId>${sap.cloud.sdk.plugin}</artifactId>
                     <version>${sap.cloud.sdk.version}</version>
                 </plugin>
-
-                <!-- Force m2e to ignore plugin goal that it doesn't support naturally -->
                 <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>
-                                            org.apache.maven.plugins
-                                        </groupId>
-                                        <artifactId>
-                                            maven-enforcer-plugin
-                                        </artifactId>
-                                        <versionRange>
-                                            [0.0.1,)
-                                        </versionRange>
-                                        <goals>
-                                            <goal>enforce</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
-<!-- WAKALEO-->				
-				
-				<plugin>
+                    
                     <groupId>org.easyb</groupId>
                     <artifactId>maven-easyb-plugin</artifactId>
                     <version>${easyb.version}</version>
@@ -439,43 +176,179 @@
                         </storyReport>
                     </configuration>
                 </plugin>
-<!-- WAKALEO-->				
-				
-				
+
             </plugins>
         </pluginManagement>
-		
-<!-- WAKALEO-->				
-	<extensions>
+        <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-webdav-jackrabbit</artifactId>
                 <version>2.2</version>
             </extension>
-    </extensions>		
-<!-- WAKALEO-->				
-	</build>
+        </extensions>
+    </build>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+            <groupId>com.sap.cloud</groupId>
+            <artifactId>neo-java-web-api</artifactId>
+            <version>${sap.cloud.sdk.version}</version>
+            <scope>provided</scope>
+        </dependency>
+            
+            <dependency>
+                <groupId>org.easyb</groupId>
+                <artifactId>easyb-core</artifactId>
+                <version>${easyb.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
+    <modules>
+        <module>gameoflife-build</module>
+        <module>gameoflife-core</module>
+        <module>gameoflife-web</module>
+    </modules>
     <profiles>
-   
-        <!-- The cloud integration tests will stop a currently running sample application (cleanup-cloud-application), deploy 
-            the sample application (deploy-cloud-application), allow samples to run sample specific application configurations (prepare-cloud-application), 
-            start the cloud application and wait for it to become available (start-cloud-application), run the integration tests with 
-            the maven-failsafe-plugin (execute-cloud-integration-tests) and finally stop the cloud application (stop-cloud-application) -->
-        <!-- Note that you need to provide Maven properties sap.cloud.account, sap.cloud.username, and sap.cloud.password 
-            for the operations to pass successfully and https.proxyHost and possibly https.proxyPort if you have a proxy! -->
         <profile>
-            <id>cloud-integration-tests</id>
+            <id>development</id>
             <activation>
-<!-- WAKALEO-->				
-				<activeByDefault>true</activeByDefault>
-<!-- WAKALEO-->				
-			</activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+        </profile>
+        <profile>
+            <id>metrics</id>
             <build>
-            <plugins>
-				
-<!-- WAKALEO-->				
-					    <plugin>
+                <plugins>
+                    <plugin>
+                    <groupId>com.sap.cloud</groupId>
+                    <artifactId>${sap.cloud.sdk.plugin}</artifactId>
+                    <version>${sap.cloud.sdk.version}</version>
+                </plugin>
+                    <!-- CHECKSTYLE -->
+                    <!--<plugin>-->
+                        <!--<artifactId>maven-checkstyle-plugin</artifactId>-->
+                        <!--<version>2.9.1</version>-->
+                        <!--<dependencies>-->
+                            <!--<dependency>-->
+                                <!--<groupId>com.wakaleo.gameoflife</groupId>-->
+                                <!--<artifactId>gameoflife-build</artifactId>-->
+                                <!--<version>${project.version}</version>-->
+                            <!--</dependency>-->
+                        <!--</dependencies>-->
+                        <!--<configuration>-->
+                            <!--<configLocation>custom-checkstyle.xml</configLocation>-->
+                        <!--</configuration>-->
+                    <!--</plugin>-->
+
+                    <!-- PMD -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>3.2</version>
+                        <configuration>
+                            <targetJdk>1.6</targetJdk>
+                            <aggregate>true</aggregate>
+                            <format>xml</format>
+                            <!-- CPD options -->
+                            <minimumTokens>20</minimumTokens>
+                            <!--<ignoreIdentifiers>true</ignoreIdentifiers>-->
+                            <failOnViolation>true</failOnViolation>
+                            <failurePriority>2</failurePriority>
+                        </configuration>
+                    </plugin>
+
+                    <!-- FINDBUGS -->
+                    <plugin>
+                        <artifactId>findbugs-maven-plugin</artifactId>
+                        <version>2.4.0</version>
+                        <configuration>
+                            <effort>Max</effort>
+                            <xmlOutput>true</xmlOutput>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>maven3</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <version>1.0</version>
+                        <executions>
+                            <execution>
+                                <id>enforce-versions</id>
+                                <phase>initialize</phase>
+                                                       
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireMavenVersion>
+                                            <version>[3.0,)</version>
+                                        </requireMavenVersion>
+                                    </rules>
+                                </configuration>
+                            </execution>
+                            </executions>
+                     </plugin>
+                     <plugin>
+                    <groupId>com.sap.cloud</groupId>
+                    <artifactId>${sap.cloud.sdk.plugin}</artifactId>
+                    <version>${sap.cloud.sdk.version}</version>
+                <executions>
+                            <execution>
+                                <id>cloud-install-sdk</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>install-sdk</goal>
+                                </goals>
+                                </execution>
+                                </executions>
+                         <configuration>
+                            <skip>${skipIntegrationTests}</skip>
+                            <sdkInstallPath>${sap.cloud.sdk.path}</sdkInstallPath>
+                            <host>${sap.cloud.host}</host>
+                            <user>${sap.cloud.username}</user>
+                            <password>${sap.cloud.password}</password>
+                            <account>${sap.cloud.account}</account>
+                            <application>${sap.cloud.application}</application>
+                            <source>${project.build.directory}/gameoflife-core-1.0-SNAPSHOT.jar</source>
+                            <synchronous>true</synchronous>
+                            <javaVersion>8</javaVersion>
+                        </configuration>
+                     </plugin>
+                   
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-site-plugin</artifactId>
                         <version>3.3</version>
@@ -558,8 +431,147 @@
                             </dependency>
                         </dependencies>
                     </plugin>
-<!-- WAKALEO-->				
-				
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>maven2</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <version>1.0</version>
+                        <executions>
+                            <execution>
+                                <id>enforce-versions</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireMavenVersion>
+                                            <version>[2.0.9, 2.2.1]</version>
+                                        </requireMavenVersion>
+                                    </rules>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-site-plugin</artifactId>
+                        <version>2.1.1</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.wakaleo.gameoflife</groupId>
+                                <artifactId>gameoflife-build</artifactId>
+                                <version>${project.version}</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+            <reporting>
+                <plugins>
+					<plugin>
+						<groupId>com.sap.cloud</groupId>
+						<artifactId>${sap.cloud.sdk.plugin}</artifactId>
+						<version>${sap.cloud.sdk.version}</version>
+						<configuration>
+                            <skip>${skipIntegrationTests}</skip>
+                            <sdkInstallPath>${sap.cloud.sdk.path}</sdkInstallPath>
+                            <host>${sap.cloud.host}</host>
+                            <user>${sap.cloud.username}</user>
+                            <password>${sap.cloud.password}</password>
+                            <account>${sap.cloud.account}</account>
+                            <application>${sap.cloud.application}</application>
+                            <source>${project.build.directory}/gameoflife-core-1.0-SNAPSHOT.jar</source>
+                            <synchronous>true</synchronous>
+                            <javaVersion>8</javaVersion>
+                        </configuration>
+						</plugin>
+						
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>cobertura-maven-plugin</artifactId>
+                        <version>${cobertura.version}</version>
+                        <configuration>
+                            <formats>
+                                <format>html</format>
+                                <format>xml</format>
+                            </formats>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>2.5</version>
+                        <configuration>
+                            <targetJdk>1.6</targetJdk>
+                            <aggregate>true</aggregate>
+                            <format>xml</format>
+                            <rulesets>
+                                <ruleset>/pmd-rules.xml</ruleset>
+                            </rulesets>
+                            <!-- CPD options -->
+                            <minimumTokens>20</minimumTokens>
+                            <ignoreIdentifiers>true</ignoreIdentifiers>
+
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <configuration>
+                            <configLocation>gameoflife-build/checkstyle.xml</configLocation>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>findbugs-maven-plugin</artifactId>
+                        <version>2.4.0</version>
+                        <configuration>
+                            <effort>Max</effort>
+                            <xmlOutput>true</xmlOutput>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.7</version>
+                        <configuration>
+                            <source>1.6</source>
+                            <doclet>
+                                gr.spinellis.umlgraph.doclet.UmlGraphDoc
+                            </doclet>
+                            <docletArtifact>
+                                <groupId>gr.spinellis</groupId>
+                                <artifactId>UmlGraph</artifactId>
+                                <version>4.6</version>
+                            </docletArtifact>
+                            <additionalparam>
+                                -inferrel -inferdep -hide java.* -collpackages
+                                java.util.* -attributes -operations
+                                -enumerations -enumconstants
+                            </additionalparam>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jxr-plugin</artifactId>
+                        <version>2.1</version>
+                    </plugin>
+                </plugins>
+            </reporting>
+        </profile>
+	    <profile>
+            <id>cloud-integration-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
                     <plugin>
                         <artifactId>maven-enforcer-plugin</artifactId>
                         <version>1.0.1</version>
@@ -649,7 +661,7 @@
                             <password>${sap.cloud.password}</password>
                             <account>${sap.cloud.account}</account>
                             <application>${sap.cloud.application}</application>
-                            <source>${project.build.directory}/${project.artifactId}.war</source>
+                            <source>${project.build.directory}/gameoflife-core-1.0-SNAPSHOT.jar</source>
                             <synchronous>true</synchronous>
                             <javaVersion>8</javaVersion>
                         </configuration>
@@ -684,6 +696,6 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-   </profiles>
+ </profile>
+    </profiles>
 </project>
