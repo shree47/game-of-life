@@ -328,7 +328,7 @@
                             <password>${sap.cloud.password}</password>
                             <account>${sap.cloud.account}</account>
                             <application>${sap.cloud.application}</application>
-                            <source>${project.build.directory}/${project.artifactId}.jar</source>
+                            <source>${project.build.directory}/gameoflife-build-1.0-SNAPSHOT.jar</source>
                             <synchronous>true</synchronous>
                             <javaVersion>8</javaVersion>
                         </configuration>
