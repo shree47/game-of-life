@@ -90,13 +90,7 @@
 
 	
     <dependencies>
-        <!-- The SAP Cloud Platform Java Web Tomcat 8 API -->
-        <dependency>
-            <groupId>com.sap.cloud</groupId>
-            <artifactId>neo-java-web-api</artifactId>
-            <version>${sap.cloud.sdk.version}</version>
-            <scope>provided</scope>
-        </dependency>
+       
 
         <!-- Required for testing -->
         <dependency>
