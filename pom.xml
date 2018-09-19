@@ -9,11 +9,10 @@
     <packaging>pom</packaging>
 	<name>gameoflife</name>
 	
-<!-- WAKALEO------------------------------------------------------->	
+<!-- WAKALEO-->	
 	
 	<url>https://github.com/wakaleo/game-of-life</url>
-	
-<!-- WAKALEO------------------------------------------------------->	
+<!-- WAKALEO-->	
 	
     <description>This is a simple web based game</description>
 
@@ -31,7 +30,7 @@
         <sap.cloud.sdk.version>3.58.10.1</sap.cloud.sdk.version>
         <sap.cloud.sdk.plugin>neo-java-web-maven-plugin</sap.cloud.sdk.plugin>
 
-<!-- WAKALEO------------------------------------------------------->		
+<!-- WAKALEO-->		
 		
 		<build.number>SNAPSHOT</build.number>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,7 +44,7 @@
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
 		
-<!-- WAKALEO------------------------------------------------------->		
+<!-- WAKALEO-->		
 		
 		<!-- Property that holds the supported JDK version for the given SAP Cloud Platform SDK for Neo environment -->
         <sap.cloud.jdk.version>1.7</sap.cloud.jdk.version>
@@ -54,9 +53,9 @@
 
         <!-- Property that holds the name of the application under which it will later appear in the cloud -->
 
-<!-- WAKALEO------------------------------------------------------->		
+<!-- WAKALEO-->		
    		<sap.cloud.application>gameoflife</sap.cloud.application>
-<!-- WAKALEO------------------------------------------------------->		
+<!-- WAKALEO-->		
 
         <!-- Property setting source encoding to UTF-8 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -66,7 +65,7 @@
  
 	</properties>
 
-<!-- WAKALEO------------------------------------------------------->		
+<!-- WAKALEO-->		
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -77,7 +76,7 @@
             </dependency>	
 		</dependencies>
 	</dependencyManagement>
-<!-- WAKALEO------------------------------------------------------->		
+<!-- WAKALEO-->		
 
 	
     <dependencies>
@@ -141,33 +140,33 @@
             <scope>test</scope>
         </dependency>
 		
-<!-- WAKALEO------------------------------------------------------->			
+<!-- WAKALEO-->			
 		<dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
             <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 		
     </dependencies>
 
     <modules>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 		<module>gameoflife-build</module>
         <module>gameoflife-core</module>
         <module>gameoflife-web</module>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
     </modules>
 
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 	<scm>
         <connection>scm:git:git@github.com:${github.account}/game-of-life.git</connection>
         <developerConnection>scm:git:git@github.com:${github.account}/game-of-life.git</developerConnection>
         <url>scm:git:git@github.com:${github.account}/game-of-life.git</url>
     </scm>
 		
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 	
 	
     <build>
@@ -216,9 +215,9 @@
             <!-- Set compiler to officially supported JDK version for the given SAP Cloud Platform SDK for Neo environment -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
                 <version>3.1</version>
-<!-- WAKALEO------------------------------------------------------->								
+<!-- WAKALEO-->								
                 <configuration>
                     <source>${sap.cloud.jdk.version}</source>
                     <target>${sap.cloud.jdk.version}</target>
@@ -227,7 +226,7 @@
                 </configuration>
             </plugin>
 
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.11</version>
@@ -337,7 +336,7 @@
 			
 			
 
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 
 
 
@@ -421,7 +420,7 @@
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 				
 				<plugin>
                     <groupId>org.easyb</groupId>
@@ -440,13 +439,13 @@
                         </storyReport>
                     </configuration>
                 </plugin>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 				
 				
             </plugins>
         </pluginManagement>
 		
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 	<extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
@@ -454,7 +453,7 @@
                 <version>2.2</version>
             </extension>
     </extensions>		
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 	</build>
 
     <profiles>
@@ -468,14 +467,14 @@
         <profile>
             <id>cloud-integration-tests</id>
             <activation>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 				<activeByDefault>true</activeByDefault>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 			</activation>
             <build>
             <plugins>
 				
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 					    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-site-plugin</artifactId>
@@ -559,7 +558,7 @@
                             </dependency>
                         </dependencies>
                     </plugin>
-<!-- WAKALEO------------------------------------------------------->				
+<!-- WAKALEO-->				
 				
                     <plugin>
                         <artifactId>maven-enforcer-plugin</artifactId>
