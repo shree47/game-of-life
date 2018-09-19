@@ -55,7 +55,7 @@
         <!-- Property that holds the name of the application under which it will later appear in the cloud -->
 
 <!-- WAKALEO -->		
-   		<sap.cloud.application>gameoflife</sap.cloud.application>
+   		<sap.cloud.application>sample</sap.cloud.application>
 <!-- WAKALEO -->		
 
         <!-- Property setting source encoding to UTF-8 -->
